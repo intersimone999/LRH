@@ -28,7 +28,7 @@ to get the results and, in pipeline, the harvester to collect the results. Final
 Clone the repository and add the folder in your require path. A gem will be available soon. Then, just add the require instruction
 in your script:
 
-`require "LRH.rb"`
+`require "LRH"`
 
 ### Defining a lister
 A lister has this structure:
