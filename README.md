@@ -57,7 +57,7 @@ The only method you need to implement is `list`.
 ### Defining a runner
 A runner has this structure:
 ```
-class CountACharacter < Runner
+class CountCharacter < Runner
     def initialize(char_to_count)
         super()
         set_option :ctc, char_to_count
@@ -101,4 +101,17 @@ class CollectCharacterNumber < Harvester
 end
 ```
 
+### Defining a job
+A job just collects the three parts and runs them. For example:
+```
+job = Job.new(ListAllCharacters.new("this is a test"), 
+              CountCharacter.new("t"),
+              CollectCharacterNumber.new)
+job.run
+```
 
+You can also design a partial job. For example, if you do not need to collect data, you can simply run:
+```
+job = PartialJob.new(ExampleLister.new, ExampleRunner.new)
+job.run
+```
