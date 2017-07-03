@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/LRH.svg)](https://badge.fury.io/rb/LRH)
+
 # LRH
 This is a very simple script that implements a Lister-Runner-Harvester framework in Ruby.
 
@@ -25,8 +27,12 @@ to get the results and, in pipeline, the harvester to collect the results. Final
 
 
 ## How to use it
-Clone the repository and add the folder in your require path. A gem will be available soon. Then, just add the require instruction
-in your script:
+Clone the repository and the script. As an alternative, you can install the ruby gem with the command:
+```
+gem install LRH
+```
+
+Then, just add the require instruction in your script:
 
 `require "LRH"`
 
