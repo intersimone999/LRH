@@ -67,6 +67,37 @@ class Lister < IOAble
     end
 end
 
+class ListerJoiner < IOAble
+    def initialize
+        super
+    end
+        
+    def _join(lister_output)
+        self.join(lister_output)
+    end
+    
+    def join(lister_output)
+        # Creates an instance 
+    end
+end
+
+class MultiLister < Lister
+    def initialize(main_lister, joiner)
+        @basic_lister = main_lister
+        @joiner = joiner
+    end
+    
+    def list
+        @basic_lister.list do |basic_list_element|
+            joined = @joiner.join(basic_list_element)
+                
+            joined.list do |sublist_element|
+                yield sublist_element
+            end
+        end
+    end
+end
+
 class ParallelLister < Lister
     def initialize(threads=4)
         super()
