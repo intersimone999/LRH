@@ -50,7 +50,7 @@ class ListAllCharacters < Lister
     def list
         string     = get_option :string
         
-        #Assuming that opt1 is a string, it gets all the caracter and it iterates a character at a time
+        #Assuming that opt1 is a string, it gets all the character and it iterates a character at a time
         string.split("").each do |chr|
             yield chr
         end
